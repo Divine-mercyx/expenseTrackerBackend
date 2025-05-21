@@ -1,4 +1,4 @@
-const { getAllProducts, getProductById, createProduct, getTotalPriceOfUserProducts, getTotalPriceOfUserForCategory } = require("../data/repository/productRepository");
+const { getAllProducts, getProductById, createProduct, getTotalPriceOfUserProducts, getTotalPriceOfUserForCategory, getNumberOfUserProducts } = require("../data/repository/productRepository");
 const express = require("express");
 const router = express.Router();
 
