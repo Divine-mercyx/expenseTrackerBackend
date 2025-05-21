@@ -20,9 +20,7 @@ app.use(cors({
   maxAge: 600,
   preflightContinue: false,
   optionsSuccessStatus: 204,
-  allowedHeaders: ["Content-Type", "Authorization"],
-  exposedHeaders: ["Content-Range", "X-Content-Range"],
-  maxAge: 600,
+  "access-control-allow-origin": true,
 }));
 app.use(express.json());
 
