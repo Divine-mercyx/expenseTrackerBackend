@@ -9,9 +9,9 @@ const getAllProducts = async (req, res) => {
     }
 };
 
-const getProductById = async (req, res) => {
+const getUserProducts = async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id);
+        const product = await Product.find({ user: req.params.id });
         res.status(200).json(product);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -47,5 +47,12 @@ const getTotalPriceOfUserForCategory = async (req, res) => {
     }
 };
 
-
-module.exports = { getAllProducts, getProductById, createProduct, getTotalPriceOfUserProducts, getTotalPriceOfUserForCategory };
+const getNumberOfUserProducts = async (req, res) => {
+    try {
+        const products = await Product.find({ user: req.params.id });
+        res.status(200).json(products.length);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+module.exports = { getAllProducts, getUserProducts, createProduct, getTotalPriceOfUserProducts, getTotalPriceOfUserForCategory, getNumberOfUserProducts };

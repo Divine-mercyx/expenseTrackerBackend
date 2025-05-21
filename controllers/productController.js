@@ -7,5 +7,6 @@ router.get("/:id", getProductById);
 router.post("/", createProduct);
 router.get("/total-price/:id", getTotalPriceOfUserProducts);
 router.get("/total-price/:id/:category", getTotalPriceOfUserForCategory);
+router.get("/number-of-products/:id", getNumberOfUserProducts);
 
 module.exports = router;
